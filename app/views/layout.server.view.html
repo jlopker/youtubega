@@ -56,13 +56,19 @@
 		var user = {{ user | json | safe }};
 	</script>
 
+	<script src="https://www.youtube.com/iframe_api"></script>
+
 	<!--Application JavaScript Files-->
 	{% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %} 
 
+	
 	{% if process.env.NODE_ENV === 'development' %}
 	<!--Livereload script rendered -->
 	<script type="text/javascript" src="http://{{request.hostname}}:35729/livereload.js"></script>
 	{% endif %}
+
+	<script src="/lib/angular-youtube-mb/src/angular-youtube-embed.js"></script>
+
 </body>
 
 </html>
